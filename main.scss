@@ -1,0 +1,87 @@
+$tcolor: #fff;
+$pcolor: #d49466;
+
+body {
+  margin: 0;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $tcolor;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #263343;
+  padding: 8px 12px;
+  .navbar__logo {
+    font-size: 24px;
+    color: $tcolor;
+    .fa-accusoft {
+      color: $pcolor;
+    }
+  }
+  .navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    li {
+      padding: 8px 12px;
+      &:hover {
+        background-color: $pcolor;
+        border-radius: 4px;
+      }
+    }
+  }
+  .navbar__links {
+    list-style: none;
+    color: $tcolor;
+    display: flex;
+    padding-left: 0;
+    li {
+      padding: 8px 12px;
+    }
+  }
+  
+  .togglebtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: $pcolor;
+  }
+  .navbar__menu.active, .navbar__links.active {
+    display: flex;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    position: relative;
+    .navbar__menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      li {
+        width: 100%;
+        text-align:center;
+      }
+    }
+    .navbar__links {
+      display: none;
+      justify-content: center;
+      width: 100%;
+    }
+    .togglebtn {
+      display: block;
+    }
+  }
+}
